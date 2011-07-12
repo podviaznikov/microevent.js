@@ -16,8 +16,10 @@ var MicroEventEmitter=Object.create({},{
             if(event in this.events===false){
             	return;
             }
-            for(var i=0;i<this.events[event].length;i++){
-                this.events[event][i].apply(this,Array.prototype.slice.call(arguments,1));
+            var listeners=this.events[event],
+                i=0;
+            for(;i<listeners.length;i++){
+                listeners[i].apply(this,Array.prototype.slice.call(arguments,1));
             }
 	    }
     }
