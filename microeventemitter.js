@@ -6,8 +6,8 @@ var MicroEventEmitter=Object.create({},{
     //listener for event
     on:{
         value:function(event,fn){
-		    this.events[event]=this.events[event]||[];
-		    this.events[event].push(fn);
+            this.events[event]=this.events[event]||[];
+            this.events[event].push(fn);
         }
     },
     //fire event
@@ -21,6 +21,6 @@ var MicroEventEmitter=Object.create({},{
             for(;i<listeners.length;i++){
                 listeners[i].apply(this,Array.prototype.slice.call(arguments,1));
             }
-	    }
+        }
     }
 });
